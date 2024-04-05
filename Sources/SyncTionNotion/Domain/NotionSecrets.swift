@@ -18,6 +18,10 @@ import PreludePackage
 public struct NotionSecrets: LoadedFromEnvironmentVariable, Codable, Equatable {
     var secret: String
     
+    public var isValid: Bool {
+        !secret.isEmpty
+    }
+
     public init(envText secret: String) {
         self.init(secret: secret)
     }
