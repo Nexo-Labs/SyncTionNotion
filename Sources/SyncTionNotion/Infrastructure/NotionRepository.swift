@@ -27,10 +27,10 @@ fileprivate extension URLRequest {
     }
 }
 
-final class FormNotionRepository: FormRepository {
-    static let shared = FormNotionRepository()
+public final class FormNotionRepository: FormRepository {
+    public static let shared = FormNotionRepository()
     
-    @KeychainWrapper(Constants.notionSecretLabel) var notionSecrets: NotionSecrets?
+    @KeychainWrapper(Constants.notionSecretLabel) public var notionSecrets: NotionSecrets?
 
     func post(form: FormModel) async throws -> Void {
         guard let notionSecrets else { throw FormError.auth(NotionFormService.shared.id) }
@@ -66,7 +66,7 @@ final class FormNotionRepository: FormRepository {
             }
     }
     
-    static var scratchTemplate: FormTemplate {
+    public static var scratchTemplate: FormTemplate {
         let style = FormModel.Style(
             formName: NotionFormService.shared.description,
             icon: .static(NotionFormService.shared.icon),
