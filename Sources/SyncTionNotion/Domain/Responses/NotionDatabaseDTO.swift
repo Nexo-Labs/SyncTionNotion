@@ -127,12 +127,12 @@ struct NotionRelationFieldDTO: Equatable, Codable {
 }
 
 struct NotionOptionDTO: Equatable, Codable {
-    let id: String
+    let id: String?
     let name: String
     var color: String = ""
     
     var option: Option {
-        Option(optionId: id, description: name)
+        Option(optionId: id ?? name, description: name)
     }
 }
 
