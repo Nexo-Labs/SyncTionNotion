@@ -30,7 +30,7 @@ fileprivate extension URLRequest {
 public final class FormNotionRepository: FormRepository {
     public static let shared = FormNotionRepository()
     
-    @KeychainWrapper(Constants.notionSecretLabel) public var notionSecrets: NotionSecrets?
+    @KeychainWrapper("NOTION_PRIVATE_SECRET") public var notionSecrets: NotionSecrets?
 
     func post(form: FormModel) async throws -> Void {
         guard let notionSecrets else { throw FormError.auth(NotionFormService.shared.id) }
