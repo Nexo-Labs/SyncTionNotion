@@ -69,7 +69,7 @@ public final class FormNotionRepository: FormRepository {
     public static var scratchTemplate: FormTemplate {
         let style = FormModel.Style(
             formName: NotionFormService.shared.description,
-            icon: .static(NotionFormService.shared.icon),
+            icon: .static(NotionFormService.shared.icon, loadAsPng: false),
             color: Color.accentColor.rgba
         )
         
