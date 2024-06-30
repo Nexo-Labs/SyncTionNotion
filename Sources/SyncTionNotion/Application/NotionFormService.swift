@@ -46,7 +46,7 @@ public final class NotionFormService: FormService {
             
             logger.info("LoadInputsFromNotionDatabase: success")
             guard let firstFocus = notionColumns.first?.id else { return }
-            form.template.firstInputId = firstFocus
+            form.template.entrypointInputId = firstFocus
         }
     }
     
